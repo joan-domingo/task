@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import useFetchData from "./hooks/useFetchData";
+import PhotoGallery from "./components/PhotoGallery";
+import DataContext from "./contexts/DataContext";
+import Loading from "./components/Loading";
+import Error from "./components/Error";
 
-function App() {
+const App = () => {
+  const { data, loading, error } = useFetchData(
+    "https://api.slingacademy.com/v1/sample-data/photos?limit=100"
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {loading && <Loading />}
+      {error && <Error message="Something went wrong!" />}
+      {data && (
+        <DataContext.Provider value={data}>
+          <PhotoGallery />
+        </DataContext.Provider>
+      )}
     </div>
   );
-}
+};
 
 export default App;

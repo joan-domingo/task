@@ -1,0 +1,20 @@
+@import "../media-queries.scss";
+
+.card-view {
+  &__card {
+    margin: 10px;
+    display: flex;
+
+    @include mobile() {
+      margin: 2px;
+    }
+  }
+
+  &__photo {
+    width: 100%;
+  }
+
+  &__text-layout {
+    padding: 12px;
+  }
+}

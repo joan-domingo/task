@@ -1,0 +1,14 @@
+@import "../media-queries.scss";
+
+.photo-gallery-switch__container {
+  position: fixed;
+  bottom: 64px;
+  right: 64px;
+  z-index: 10;
+  background-color: rgb(183, 237, 255);
+
+  @include mobile() {
+    bottom: 24px;
+    right: 24px;
+  }
+}

@@ -1,0 +1,25 @@
+@import "./media-queries.scss";
+
+.App {
+  padding: 24px;
+  margin: 0;
+
+  @include mobile() {
+    padding: 8px;
+  }
+}
+
+/* Workaround for responsiveness of ImageList from Material UI components */
+@include mobile() {
+  .MuiImageList-root {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin: 0;
+  }
+}
+
+@include desktop() {
+  .MuiImageList-root {
+    grid-template-columns: repeat(3, 1fr) !important;
+    margin: 0;
+  }
+}

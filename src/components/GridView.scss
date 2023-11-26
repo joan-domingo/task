@@ -1,0 +1,11 @@
+.grid-view {
+  &__item {
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  &__image {
+    width: 100%;
+  }
+}

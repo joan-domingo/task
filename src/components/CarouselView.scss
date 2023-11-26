@@ -1,0 +1,58 @@
+@import "../media-queries.scss";
+
+.carousel-view {
+  aspect-ratio: 4 / 3;
+  width: auto;
+  height: 80%;
+
+  @include mobile() {
+    width: 100%;
+    height: auto;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 48px /* padding */);
+  }
+
+  &__carousel-inner {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+  }
+
+  &__carousel-inner .left {
+    flex: 5%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    display: grid;
+    place-items: center;
+    color: white;
+    cursor: pointer;
+  }
+
+  &__carousel-inner .center {
+    flex: 80%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    text-align-last: center;
+  }
+
+  &__carousel-inner .right {
+    flex: 5%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.6);
+    display: grid;
+    place-items: center;
+    color: white;
+    cursor: pointer;
+  }
+}
